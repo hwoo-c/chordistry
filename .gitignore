@@ -1,2 +1,4 @@
 db.sqlite3
 chordistry/__pycache__
+piano/__pycache__
+piano/migrations/__pycache__
