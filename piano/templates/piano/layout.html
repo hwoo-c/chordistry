@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +17,7 @@
 
     <body>
         <nav id="sidebar">
-            {% is user.is_authenticated %}
+            {% if user.is_authenticated %}
             {% else %}
             {% endif %}
         </nav>
