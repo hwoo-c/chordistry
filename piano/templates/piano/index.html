@@ -1,5 +1,38 @@
 {% extends 'piano/layout.html' %}
 
+{% load static %}
+
 {% block body %}
-<h1>Lorem</h1>
+<h1>Piano</h1>
+<audio class="key-audio" data-key="C3" src="{% static 'piano/audio/Piano.pp.C3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="Db3" src="{% static 'piano/audio/Piano.pp.Db3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="D3" src="{% static 'piano/audio/Piano.pp.D3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="Eb3" src="{% static 'piano/audio/Piano.pp.Eb3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="E3" src="{% static 'piano/audio/Piano.pp.E3.mp3' %}" volume="100"></audio>
+
+<div id="piano">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 500 500">
+        <!-- Piano key SVGs -->
+        <svg id="C3" class="key white-key" fill="#fff" x="2%" y="2%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />
+        </svg>
+        <svg id="Db3" class="key black-key" fill="#000" x="7.5%" y="2%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 30 90 L 30 5 L 5 5 z" />
+        </svg>
+        <svg id="D3" class="key white-key" fill="#fff" x="10%" y="2%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />
+        </svg>
+        <svg id="Eb3" class="key black-key" fill="#000" x="15.5%" y="2%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 30 90 L 30 5 L 5 5 z" />
+        </svg>
+        <svg id="E3" class="key white-key" fill="#fff" x="18%" y="2%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />
+        </svg>
+
+        <!-- Make black keys appear on top -->
+        <!-- Source: https://stackoverflow.com/questions/17786618/how-to-use-z-index-in-svg-elements -->
+        <use xlink:href="#Db3" />
+        <use xlink:href="#Eb3" />
+    </svg>
+</div>
 {% endblock %}
