@@ -9,23 +9,55 @@
 <audio class="key-audio" data-key="D3" src="{% static 'piano/audio/Piano.pp.D3.mp3' %}" volume="100"></audio>
 <audio class="key-audio" data-key="Eb3" src="{% static 'piano/audio/Piano.pp.Eb3.mp3' %}" volume="100"></audio>
 <audio class="key-audio" data-key="E3" src="{% static 'piano/audio/Piano.pp.E3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="F3" src="{% static 'piano/audio/Piano.pp.F3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="Gb3" src="{% static 'piano/audio/Piano.pp.Gb3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="G3" src="{% static 'piano/audio/Piano.pp.G3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="Ab3" src="{% static 'piano/audio/Piano.pp.Ab3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="A3" src="{% static 'piano/audio/Piano.pp.A3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="Bb3" src="{% static 'piano/audio/Piano.pp.Bb3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="B3" src="{% static 'piano/audio/Piano.pp.B3.mp3' %}" volume="100"></audio>
+<audio class="key-audio" data-key="C4" src="{% static 'piano/audio/Piano.pp.C4.mp3' %}" volume="100"></audio>
 
 <div id="piano">
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 500 500">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 500 160">
         <!-- Piano key SVGs -->
-        <svg id="C3" class="key white-key" fill="#fff" x="2%" y="2%">
+        <svg id="C3" class="key white-key" fill="#fff" x="2%" y="0%">
             <path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />
         </svg>
-        <svg id="Db3" class="key black-key" fill="#000" x="7.5%" y="2%">
+        <svg id="Db3" class="key black-key" fill="#000" x="7.5%" y="0%">
             <path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 30 90 L 30 5 L 5 5 z" />
         </svg>
-        <svg id="D3" class="key white-key" fill="#fff" x="10%" y="2%">
+        <svg id="D3" class="key white-key" fill="#fff" x="10%" y="0%">
             <path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />
         </svg>
-        <svg id="Eb3" class="key black-key" fill="#000" x="15.5%" y="2%">
+        <svg id="Eb3" class="key black-key" fill="#000" x="15.5%" y="0%">
             <path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 30 90 L 30 5 L 5 5 z" />
         </svg>
-        <svg id="E3" class="key white-key" fill="#fff" x="18%" y="2%">
+        <svg id="E3" class="key white-key" fill="#fff" x="18%" y="0%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />
+        </svg>
+        <svg id="F3" class="key white-key" fill="#fff" x="26%" y="0%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />
+        </svg>
+        <svg id="Gb3" class="key black-key" fill="#000" x="31.5%" y="0%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 30 90 L 30 5 L 5 5 z" />
+        </svg>
+        <svg id="G3" class="key white-key" fill="#fff" x="34%" y="0%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />
+        </svg>
+        <svg id="Ab3" class="key black-key" fill="#000" x="39.5%" y="0%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 30 90 L 30 5 L 5 5 z" />
+        </svg>
+        <svg id="A3" class="key white-key" fill="#fff" x="42%" y="0%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />
+        </svg>
+        <svg id="Bb3" class="key black-key" fill="#000" x="47.5%" y="0%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 30 90 L 30 5 L 5 5 z" />
+        </svg>
+        <svg id="B3" class="key white-key" fill="#fff" x="50%" y="0%">
+            <path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />
+        </svg>
+        <svg id="C4" class="key white-key" fill="#fff" x="58%" y="0%">
             <path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />
         </svg>
 
@@ -33,6 +65,9 @@
         <!-- Source: https://stackoverflow.com/questions/17786618/how-to-use-z-index-in-svg-elements -->
         <use xlink:href="#Db3" />
         <use xlink:href="#Eb3" />
+        <use xlink:href="#Gb3" />
+        <use xlink:href="#Ab3" />
+        <use xlink:href="#Bb3" />
     </svg>
 </div>
 {% endblock %}
