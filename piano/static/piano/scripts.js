@@ -1,6 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
-    attachAudiosToKeys();
+    createPiano();
 });
+
+const fetchKeys = async () => {
+    let response = await fetch('/static/piano/keys.json')
+    response = await response.json()
+    return response.keys;
+}
+
+const createPiano = async () => {
+    const keys = await fetchKeys();
+    createAudioTags(keys);
+    createKeys(keys);
+}
+
+const createAudioTags = keys => {
+    const wrapper = document.querySelector('#key-audios-wrapper');
+    keys.forEach(key => {
+        const audio = document.createElement('audio');
+        audio.className = 'key-audio';
+        audio.dataset.key = key.name;
+        audio.src = `/static/piano/audio/Piano.pp.${key.name}.mp3`;
+        audio.volume = 1;
+        wrapper.append(audio);
+    })
+}
+
+const createKeys = keys => {
+    const wrapper = document.querySelector('#piano-svg-wrapper');
+    let blackKeyIDs = [];
+
+    keys.forEach(key => {
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+        svg.id = key.name;
+        svg.classList.add(`key`);
+        svg.classList.add(`${key.color}-key`);
+        if (key.color === 'white') {
+            svg.setAttribute('fill', '#fff');
+            svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />'
+        }
+        else {
+            svg.setAttribute('fill', '#000');
+            svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 30 90 L 30 5 L 5 5 z" />'
+            blackKeyIDs.push(key.name);
+        }
+        svg.setAttribute('x', `${key.posx}%`);
+        svg.setAttribute('y', `0%`);
+
+        wrapper.append(svg);
+    });
+
+    /* 
+        Make black keys appear on top 
+        Source: https://stackoverflow.com/questions/17786618/how-to-use-z-index-in-svg-elements
+    */
+    blackKeyIDs.forEach(id => {
+        wrapper.innerHTML += `<use xlink:href="#${id}" />`
+    });
+
+    attachAudiosToKeys();
+}
 
 const attachAudiosToKeys = () => {
     const audios = document.querySelectorAll('.key-audio');
@@ -84,5 +143,5 @@ const clickKeys = (keyIDs, ms) => {
         key.classList.add('block-mouse-events'); // Note: class added after timeout has been set in clickKey
     });
     let t1 = performance.now();
-    console.log(`${t1 - t0}ms`);
+    console.log(`clickKeys run time: ${t1 - t0}ms`);
 }
