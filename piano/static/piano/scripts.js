@@ -44,7 +44,7 @@ const createKeys = keys => {
             svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 30 90 L 30 5 L 5 5 z" />'
             blackKeyIDs.push(key.name);
         }
-        svg.setAttribute('x', `${key.posx}%`);
+        svg.setAttribute('x', `${key.posx}`);
         svg.setAttribute('y', `0%`);
 
         wrapper.append(svg);

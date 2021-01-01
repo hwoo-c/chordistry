@@ -1,17 +1,17 @@
 {
     "keys": [
-        {"name": "C3", "color": "white", "posx": "2"},
-        {"name": "Db3", "color": "black", "posx": "7.5"},
-        {"name": "D3", "color": "white", "posx": "10"},
-        {"name": "Eb3", "color": "black", "posx": "15.5"},
-        {"name": "E3", "color": "white", "posx": "18"},
-        {"name": "F3", "color": "white", "posx": "26"},
-        {"name": "Gb3", "color": "black", "posx": "31.5"},
-        {"name": "G3", "color": "white", "posx": "34"},
-        {"name": "Ab3", "color": "black", "posx": "39.5"},
-        {"name": "A3", "color": "white", "posx": "42"},
-        {"name": "Bb3", "color": "black", "posx": "47.5"},
-        {"name": "B3", "color": "white", "posx": "50"},
-        {"name": "C4", "color": "white", "posx": "58"}
+        {"name": "C3", "color": "white", "posx": "2%"},
+        {"name": "Db3", "color": "black", "posx": "7.5%"},
+        {"name": "D3", "color": "white", "posx": "10%"},
+        {"name": "Eb3", "color": "black", "posx": "15.5%"},
+        {"name": "E3", "color": "white", "posx": "18%"},
+        {"name": "F3", "color": "white", "posx": "26%"},
+        {"name": "Gb3", "color": "black", "posx": "31.5%"},
+        {"name": "G3", "color": "white", "posx": "34%"},
+        {"name": "Ab3", "color": "black", "posx": "39.5%"},
+        {"name": "A3", "color": "white", "posx": "42%"},
+        {"name": "Bb3", "color": "black", "posx": "47.5%"},
+        {"name": "B3", "color": "white", "posx": "50%"},
+        {"name": "C4", "color": "white", "posx": "58%"}
     ]
 }
