@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
 const fetchKeys = async () => {
     let response = await fetch('/static/piano/keys.json')
     response = await response.json()
-    return response.keys;
+    return response;
 }
 
 const createPiano = async () => {
-    const keys = await fetchKeys();
-    createAudioTags(keys);
-    createKeys(keys);
+    const keyInfo = await fetchKeys();
+    createAudioTags(keyInfo.keys);
+    createKeys(keyInfo);
 }
 
 const createAudioTags = keys => {
@@ -26,11 +26,16 @@ const createAudioTags = keys => {
     })
 }
 
-const createKeys = keys => {
+const createKeys = keyInfo => {
     const wrapper = document.querySelector('#piano-svg-wrapper');
+
+    const whiteOffset = parseFloat(keyInfo.whiteOffset);
+    const blackOffset = parseFloat(keyInfo.blackOffset);
+    let posx = -whiteOffset;
+    
     let blackKeyIDs = [];
 
-    keys.forEach(key => {
+    keyInfo.keys.forEach(key => {
         const svg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
         svg.id = key.name;
         svg.classList.add(`key`);
@@ -38,13 +43,15 @@ const createKeys = keys => {
         if (key.color === 'white') {
             svg.setAttribute('fill', '#fff');
             svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />'
+            posx += whiteOffset;
+            svg.setAttribute('x', `${posx}%`);
         }
         else {
             svg.setAttribute('fill', '#000');
             svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 30 90 L 30 5 L 5 5 z" />'
             blackKeyIDs.push(key.name);
+            svg.setAttribute('x', `${posx+blackOffset}%`);
         }
-        svg.setAttribute('x', `${key.posx}`);
         svg.setAttribute('y', `0%`);
 
         wrapper.append(svg);
