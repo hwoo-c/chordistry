@@ -20,7 +20,7 @@ const createAudioTags = keys => {
         const audio = document.createElement('audio');
         audio.className = 'key-audio';
         audio.dataset.key = key.name;
-        audio.src = `/static/piano/audio/Piano.pp.${key.name}.mp3`;
+        audio.src = `/static/piano/audio/${key.name}.mp3`;
         audio.volume = 1;
         wrapper.append(audio);
     })
