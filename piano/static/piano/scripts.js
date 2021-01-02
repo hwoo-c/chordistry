@@ -43,13 +43,13 @@ const createKeys = keyInfo => {
         svg.classList.add(`${key.color}-key`);
         if (key.color === 'white') {
             svg.setAttribute('fill', '#fff');
-            svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 0 0 L 0 150 L 40 150 L 40 0 L 0 0 z" />'
+            svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />'
             posx += whiteOffset;
             svg.setAttribute('x', `${posx}%`);
         }
         else {
             svg.setAttribute('fill', '#000');
-            svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 0 0 L 0 85 L 24 85 L 24 0 L 0 0 z" />'
+            svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 29 90 L 29 5 L 5 5 z" />'
             blackKeyIDs.push(key.name);
 
             // Shift certain black keys left or right
