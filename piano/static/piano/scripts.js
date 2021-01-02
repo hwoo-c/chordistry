@@ -55,9 +55,9 @@ const createKeys = keyInfo => {
             // Shift certain black keys left or right
             let sideOffset = 0;
             if (key.name.includes('Db') || key.name.includes('Gb')) {
-                sideOffset = -0.25;
+                sideOffset = -0.4;
             } else if (key.name.includes('Eb') || key.name.includes('Bb')) {
-                sideOffset = 0.25;
+                sideOffset = 0.4;
             }
 
             svg.setAttribute('x', `${posx+blackOffset+sideOffset}%`);
