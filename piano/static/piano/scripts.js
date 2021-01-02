@@ -2,16 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
     createPiano();
 });
 
-const fetchKeys = async () => {
-    let response = await fetch('/static/piano/keys.json')
-    response = await response.json()
-    return response;
-}
-
 const createPiano = async () => {
     const keyInfo = await fetchKeys();
     createAudioTags(keyInfo.keys);
     createKeys(keyInfo);
+}
+
+const fetchKeys = async () => {
+    let response = await fetch('/static/piano/keyInfo.json')
+    response = await response.json()
+    return response;
 }
 
 const createAudioTags = keys => {
