@@ -6,6 +6,7 @@ const createPiano = async () => {
     const keyInfo = await fetchKeys();
     createAudioTags(keyInfo.keys);
     createKeys(keyInfo);
+    attachAudiosToKeys();
 }
 
 const fetchKeys = async () => {
@@ -42,17 +43,26 @@ const createKeys = keyInfo => {
         svg.classList.add(`${key.color}-key`);
         if (key.color === 'white') {
             svg.setAttribute('fill', '#fff');
-            svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 5 5 L 5 155 L 45 155 L 45 5 L 5 5 z" />'
+            svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 0 0 L 0 150 L 40 150 L 40 0 L 0 0 z" />'
             posx += whiteOffset;
             svg.setAttribute('x', `${posx}%`);
         }
         else {
             svg.setAttribute('fill', '#000');
-            svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 5 5 L 5 90 L 30 90 L 30 5 L 5 5 z" />'
+            svg.innerHTML = '<path stroke-width="2" stroke="#000" d="M 0 0 L 0 85 L 24 85 L 24 0 L 0 0 z" />'
             blackKeyIDs.push(key.name);
-            svg.setAttribute('x', `${posx+blackOffset}%`);
+
+            // Shift certain black keys left or right
+            let sideOffset = 0;
+            if (key.name.includes('Db') || key.name.includes('Gb')) {
+                sideOffset = -0.25;
+            } else if (key.name.includes('Eb') || key.name.includes('Bb')) {
+                sideOffset = 0.25;
+            }
+
+            svg.setAttribute('x', `${posx+blackOffset+sideOffset}%`);
         }
-        svg.setAttribute('y', `0%`);
+        svg.setAttribute('y', '0%');
 
         wrapper.append(svg);
     });
@@ -64,8 +74,6 @@ const createKeys = keyInfo => {
     blackKeyIDs.forEach(id => {
         wrapper.innerHTML += `<use xlink:href="#${id}" />`
     });
-
-    attachAudiosToKeys();
 }
 
 const attachAudiosToKeys = () => {
