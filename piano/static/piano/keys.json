@@ -12,6 +12,18 @@
         {"name": "A3", "color": "white", "posx": "20%"},
         {"name": "Bb3", "color": "black", "posx": "22.75%"},
         {"name": "B3", "color": "white", "posx": "24%"},
-        {"name": "C4", "color": "white", "posx": "28%"}
+        {"name": "C4", "color": "white", "posx": "28%"},
+        {"name": "Db4", "color": "black", "posx": "30.75%"},
+        {"name": "D4", "color": "white", "posx": "32%"},
+        {"name": "Eb4", "color": "black", "posx": "34.75%"},
+        {"name": "E4", "color": "white", "posx": "36%"},
+        {"name": "F4", "color": "white", "posx": "40%"},
+        {"name": "Gb4", "color": "black", "posx": "42.75%"},
+        {"name": "G4", "color": "white", "posx": "44%"},
+        {"name": "Ab4", "color": "black", "posx": "46.75%"},
+        {"name": "A4", "color": "white", "posx": "48%"},
+        {"name": "Bb4", "color": "black", "posx": "50.75%"},
+        {"name": "B4", "color": "white", "posx": "52%"},
+        {"name": "C5", "color": "white", "posx": "56%"}
     ]
 }
