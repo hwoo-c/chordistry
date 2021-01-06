@@ -1,3 +1,12 @@
+#piano {
+    width: 100%;
+}
+
 .key-clicked {
     fill: purple;
+}
+
+.chord-btn {
+    margin-right: 5px;
+    min-width: 50px;
 }

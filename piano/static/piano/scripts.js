@@ -7,6 +7,7 @@ const createPiano = async () => {
     createAudioTags(keyInfo.keys);
     createKeys(keyInfo);
     attachAudiosToKeys();
+    createChordButtons(keyInfo.chords);
 }
 
 const fetchKeys = async () => {
@@ -108,6 +109,21 @@ const attachAudioToKey = (audio, key) => {
             audio.currentTime = 0;
         }
     });
+}
+
+const createChordButtons = chords => {
+    const defaultChordsDiv = document.querySelector('#default-chords');
+    chords.forEach(chord => {
+        const btn = document.createElement('button');
+        btn.className = 'btn btn-outline-primary chord-btn';
+        btn.innerHTML = chord.name;
+    
+        btn.addEventListener('click', () => {
+            clickKeys(chord.keys, 2000); 
+            //TODO: change the 2000ms to a variable controlled by a slider or smth
+        });
+        defaultChordsDiv.append(btn);
+    })
 }
 
 /* Keep track of active button press timeouts */
