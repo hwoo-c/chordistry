@@ -46,6 +46,10 @@
         {"name": "D",  "keys": ["D4", "Gb4", "A4"]},
         {"name": "Dm", "keys": ["D4", "F4", "A4"]},
         {"name": "E",  "keys": ["E4", "Ab4", "B4"]},
-        {"name": "Em", "keys": ["E4", "G4", "B4"]}
+        {"name": "Em", "keys": ["E4", "G4", "B4"]},
+        {"name": "F",  "keys": ["F4", "A4", "C5"]},
+        {"name": "Fm", "keys": ["F4", "Ab4", "C5"]},
+        {"name": "G",  "keys": ["G4", "B4", "D5"]},
+        {"name": "Gm", "keys": ["G4", "Bb4", "D5"]}
     ]
 }
