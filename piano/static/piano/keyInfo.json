@@ -41,6 +41,10 @@
     "whiteOffset": "4",
     "blackOffset": "2.75",
     "chords": [
+        {"name": "A",  "keys": ["A3", "Db4", "E4"]},
+        {"name": "Am", "keys": ["A3", "C4", "E4"]},
+        {"name": "B",  "keys": ["B3", "Eb4", "Gb4"]},
+        {"name": "Bm", "keys": ["B3", "D4", "Gb4"]},
         {"name": "C",  "keys": ["C4", "E4", "G4"]},
         {"name": "Cm", "keys": ["C4", "Eb4", "G4"]},
         {"name": "D",  "keys": ["D4", "Gb4", "A4"]},
